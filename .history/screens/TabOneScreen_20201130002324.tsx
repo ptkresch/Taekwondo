@@ -1,13 +1,14 @@
 import * as React from "react";
 import { StyleSheet } from "react-native";
 import AlertButtonComponent from "../components/AlertButton";
+import AlertButton from "../components/AlertButton";
 import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Page One!</Text>
+      <Text style={styles.title}>Tab One!</Text>
       <AlertButtonComponent
         title="Alert Testing!"
         buttonConfig={{
@@ -56,17 +57,17 @@ export default function TabOneScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // alignItems: "center",
-    // justifyContent: "center",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
   title: {
-    // fontSize: 20,
-    // fontWeight: "bold",
+    fontSize: 20,
+    fontWeight: "bold",
   },
   separator: {
-    // marginVertical: 30,
-    // height: 1,
-    // width: "80%",
+    marginVertical: 30,
+    height: 1,
+    width: "80%",
   },
 });

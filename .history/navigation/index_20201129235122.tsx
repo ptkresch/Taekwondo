@@ -5,7 +5,7 @@ import {
 } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import * as React from "react";
-import { ColorSchemeName } from "react-native";
+import { Alert, AlertOptions, ColorSchemeName } from "react-native";
 import AlertButton from "../components/AlertButton";
 
 import NotFoundScreen from "../screens/NotFoundScreen";
@@ -21,9 +21,9 @@ const Navigation = ({ colorScheme }: { colorScheme: ColorSchemeName }) => {
     <NavigationContainer
       fallback={<React.Fragment></React.Fragment>}
       linking={LinkingConfiguration}
-      // onReady={() =>
-      //   //onload
-      // }
+      onReady={() =>
+        AlertButton("Yes!", { title: "title", message: "message" })
+      }
       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
     >
       <RootNavigator />

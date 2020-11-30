@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
     // fontWeight: "bold",
   },
   separator: {
-    // marginVertical: 30,
-    // height: 1,
-    // width: "80%",
+    marginVertical: 30,
+    height: 1,
+    width: "80%",
   },
 });
