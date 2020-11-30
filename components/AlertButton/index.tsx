@@ -1,12 +1,7 @@
 import * as React from "react";
-import {
-  Alert,
-  AlertButton,
-  AlertOptions,
-  Button,
-  StyleSheet,
-  View,
-} from "react-native";
+import { Alert, AlertButton, AlertOptions } from "react-native";
+
+import styled from "styled-components/native";
 
 type AlertButtonOptions = {
   title: string;
@@ -27,28 +22,22 @@ const AlertButtonList = (options: AlertButtonOptions) => {
       );
 };
 
-const styles = StyleSheet.create({
-  button: {
-    // flex: 1,
-    // justifyContent: "center",
-    // alignItems: "center",
-  },
-});
+const AlertButtonComponent_ = styled.Button`
+  flex: 1;
+`;
 
 const AlertButtonComponent = (props: {
   title: string;
   buttonConfig: AlertButtonOptions;
 }) => (
-  <View style={styles.button}>
-    <Button
-      accessibilityLabel="Alert Button"
-      color="green"
-      disabled={false}
-      title={props.title}
-      onPress={() => AlertButtonList(props.buttonConfig)}
-      testID={props.title}
-    />
-  </View>
+  <AlertButtonComponent_
+    accessibilityLabel="Alert Button"
+    color="purple"
+    disabled={false}
+    title={props.title}
+    onPress={() => AlertButtonList(props.buttonConfig)}
+    testID={props.title}
+  />
 );
 
 export default AlertButtonComponent;

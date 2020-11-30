@@ -1,13 +1,21 @@
 import * as React from "react";
-import { StyleSheet } from "react-native";
+import { Text } from "react-native";
 import AlertButtonComponent from "../components/AlertButton";
 import EditScreenInfo from "../components/EditScreenInfo";
-import { Text, View } from "../components/Themed";
+import CardComponent from "../components/Card";
+import styled from "styled-components/native";
+
+const ScreenView = styled.View`
+  padding: 10px;
+`;
 
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Page One!</Text>
+    <ScreenView>
+      <Text>Page One!</Text>
+      <CardComponent>
+        <Text>test</Text>
+      </CardComponent>
       <AlertButtonComponent
         title="Alert Testing!"
         buttonConfig={{
@@ -44,29 +52,7 @@ export default function TabOneScreen() {
           },
         }}
       />
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
       <EditScreenInfo path="/screens/TabOneScreen.js" />
-    </View>
+    </ScreenView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    // flex: 1,
-    // alignItems: "center",
-    // justifyContent: "center",
-  },
-  title: {
-    // fontSize: 20,
-    // fontWeight: "bold",
-  },
-  separator: {
-    // marginVertical: 30,
-    // height: 1,
-    // width: "80%",
-  },
-});
