@@ -1,7 +1,6 @@
 import * as React from "react";
-import { AlertButton, Text } from "react-native";
+import { AlertButton } from "react-native";
 import AlertButtonComponent from "../components/AlertButton";
-import EditScreenInfo from "../components/EditScreenInfo";
 import CardComponent from "../components/Card";
 import styled from "styled-components/native";
 import ButtonComponent from "../components/Button";
@@ -37,7 +36,6 @@ const AlertButtons: AlertButton[] = [
 export default function TabOneScreen() {
   return (
     <ScreenView>
-      <Text>Page One!</Text>
       <CardComponent>
         <ButtonComponent
           title="This is a Button!"
@@ -60,7 +58,6 @@ export default function TabOneScreen() {
           },
         }}
       />
-      <EditScreenInfo path="/screens/TabOneScreen.js" />
     </ScreenView>
   );
 }

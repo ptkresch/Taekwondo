@@ -53,12 +53,8 @@ const TabOneStack = createStackNavigator<TabOneParamList>();
 
 function TabOneNavigator() {
   return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
-        name="TabOneScreen"
-        component={TabOneScreen}
-        options={{ headerTitle: "Page 1" }}
-      />
+    <TabOneStack.Navigator headerMode="none">
+      <TabOneStack.Screen name="TabOneScreen" component={TabOneScreen} />
     </TabOneStack.Navigator>
   );
 }
