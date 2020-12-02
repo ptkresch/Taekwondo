@@ -1,11 +1,10 @@
-import * as React from "react";
-import styled from "styled-components/native";
-
-import Svg, { SvgProps, Path } from "react-native-svg";
+import * as React from 'react';
+import styled from 'styled-components/native';
+import Svg, { Path, SvgProps } from 'react-native-svg';
 
 function SvgComponent(props: SvgProps) {
   return (
-    <Svg viewBox="0 -5 100 100" {...props}>
+    <Svg viewBox="28 20 46 46" {...props}>
       <Path
         fill="rgba(0,0,0,0.2)"
         fillRule="evenodd"
@@ -30,7 +29,9 @@ function SvgComponent(props: SvgProps) {
 }
 
 const IconContainer = styled.View`
-  width: 10%;
+  margin-left: 20px;
+  margin-right: auto;
+  width: 40px;
 `;
 
 const HeaderContainer = styled.View`
@@ -46,11 +47,15 @@ const HeaderContainer = styled.View`
   justify-content: center;
   margin-top: 20px;
   border: 1px solid #a7a7a7;
+  border-top-color: transparent;
 `;
 
 const HeaderTitle = styled.Text`
   font-size: 18px;
   color: #000;
+  width: 100%;
+  position: absolute;
+  text-align: center;
 `;
 
 const Header = () => {

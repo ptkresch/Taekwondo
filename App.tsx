@@ -1,4 +1,5 @@
-import { StatusBar } from "expo-status-bar";
+// import { StatusBar } from "expo-status-bar";
+import { StatusBar } from "react-native";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
@@ -18,7 +19,7 @@ export default function App() {
       <SafeAreaProvider>
         <Header />
         <Navigation colorScheme={colorScheme} />
-        <StatusBar />
+        <StatusBar translucent={true} hidden={true} />
       </SafeAreaProvider>
     );
   }
