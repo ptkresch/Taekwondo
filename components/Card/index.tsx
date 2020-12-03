@@ -1,16 +1,15 @@
-import * as React from "react";
-import styled from "styled-components/native";
-import { View } from "react-native";
+import * as React from 'react';
+import styled from 'styled-components/native';
+import { View } from 'react-native';
 
 const Card = styled.View`
   background-color: #fff;
   border-radius: 8px;
-  border: 1px solid #6800f5;
+  border: 1px solid #208630;
   color: #000;
   padding: 25px;
 `;
 
-//TODO: Add shadow to Card?
 const CardComponent: React.FunctionComponent<{}> = (props) => (
   <View
     style={[

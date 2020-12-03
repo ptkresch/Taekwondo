@@ -1,39 +1,34 @@
 import * as React from 'react';
 import styled from 'styled-components/native';
-import Svg, { Path, SvgProps } from 'react-native-svg';
-import { Image } from 'react-native';
+import { material, materialColors } from 'react-native-typography';
+import { StyleSheet } from 'react-native';
+// import Svg, { Path, SvgProps } from 'react-native-svg';
 
-function SvgComponent(props: SvgProps) {
-  return (
-    <Svg viewBox="28 20 46 46" {...props}>
-      <Path
-        fill="rgba(0,0,0,0.2)"
-        fillRule="evenodd"
-        stroke="rgba(105,84,204,1)"
-        strokeLinecap="round"
-        strokeLinejoin="bevel"
-        strokeMiterlimit={99999}
-        strokeWidth={3.846}
-        d="M50 19.23a-148.58-148.58 0 0023.077 46.155-132.894-132.894 0 00-46.154 0A-148.58-148.58 0 0050 19.23"
-      />
-      <Path
-        fill="rgba(187,187,187,0.2)"
-        fillRule="evenodd"
-        stroke="rgba(102,190,255,1)"
-        strokeLinecap="square"
-        strokeMiterlimit={99999}
-        strokeWidth={0.854}
-        d="M38.462 57.692A-14.487-14.487 0 0050 34.615a-14.487-14.487 0 0011.538 23.077-11.857-11.857 0 00-23.076 0"
-      />
-    </Svg>
-  );
-}
-
-const IconContainer = styled.View`
-  margin-left: 20px;
-  margin-right: auto;
-  width: 40px;
-`;
+// function SvgComponent(props: SvgProps) {
+//   return (
+//     <Svg viewBox="28 20 46 46" {...props}>
+//       <Path
+//         fill="rgba(0,0,0,0.2)"
+//         fillRule="evenodd"
+//         stroke="rgba(105,84,204,1)"
+//         strokeLinecap="round"
+//         strokeLinejoin="bevel"
+//         strokeMiterlimit={99999}
+//         strokeWidth={3.846}
+//         d="M50 19.23a-148.58-148.58 0 0023.077 46.155-132.894-132.894 0 00-46.154 0A-148.58-148.58 0 0050 19.23"
+//       />
+//       <Path
+//         fill="rgba(187,187,187,0.2)"
+//         fillRule="evenodd"
+//         stroke="rgba(102,190,255,1)"
+//         strokeLinecap="square"
+//         strokeMiterlimit={99999}
+//         strokeWidth={0.854}
+//         d="M38.462 57.692A-14.487-14.487 0 0050 34.615a-14.487-14.487 0 0011.538 23.077-11.857-11.857 0 00-23.076 0"
+//       />
+//     </Svg>
+//   );
+// }
 
 const HeaderContainer = styled.View`
   margin: auto;
@@ -53,12 +48,14 @@ const HeaderContainer = styled.View`
 `;
 
 const HeaderTitle = styled.Text`
-  font-size: 18px;
-  color: #198228;
+  font-size: 25px;
+  color: #fff;
   width: 100%;
   position: absolute;
   text-align: center;
-  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 3px 3px 2px green;
 `;
 
 const Logo = styled.Image`
@@ -69,12 +66,18 @@ const Logo = styled.Image`
   margin: 0 auto 0 0;
 `;
 
+const styles = StyleSheet.create({
+  display1White: {
+    ...material.display1WhiteObject,
+    color: materialColors.whitePrimary,
+  },
+});
+
 const Header = () => {
   return (
     <HeaderContainer>
       <Logo source={require("../../assets/images/ptc_logo.png")} />
-
-      <HeaderTitle>Powell's Taekwondo</HeaderTitle>
+      <HeaderTitle style={styles.display1White}>Powell's Taekwondo</HeaderTitle>
     </HeaderContainer>
   );
 };

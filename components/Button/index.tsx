@@ -9,7 +9,7 @@ type ButtonOptions = {
 };
 
 const ButtonComponent_ = styled.TouchableOpacity`
-  background-color: #198228;
+  background-color: #208630;
   padding: 10px;
   border-radius: 8px;
   text-align: center;
