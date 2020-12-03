@@ -1,15 +1,15 @@
-import * as React from "react";
-import { Button } from "react-native";
-
-import styled from "styled-components/native";
+import * as React from 'react';
+import styled from 'styled-components/native';
+import { Button } from 'react-native';
 
 type ButtonOptions = {
   title: string;
-  onPress?: (value?: string) => void;
+  value?: any;
+  onPress: (value: string) => React.FunctionComponent | void;
 };
 
 const ButtonComponent_ = styled.TouchableOpacity`
-  background-color: #6800f5;
+  background-color: #198228;
   padding: 10px;
   border-radius: 8px;
   text-align: center;
@@ -27,7 +27,7 @@ const ButtonComponent = (props: ButtonOptions) => (
   <ButtonComponent_
     activeOpacity={0.8}
     onPress={() => {
-      alert("Click!");
+      props.onPress(props.value);
     }}
   >
     <TextComponent>{props.title}</TextComponent>

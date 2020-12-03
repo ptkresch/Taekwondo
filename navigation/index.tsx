@@ -1,16 +1,16 @@
+import * as React from 'react';
+import DrawerNavigator from './DrawerNavigator';
+import Header from '../components/Header';
+import LinkingConfiguration from './LinkingConfiguration';
+import NotFoundScreen from '../screens/NotFoundScreen';
+import { RootStackParamList } from '../types';
+import { ColorSchemeName, View } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 import {
   NavigationContainer,
   DefaultTheme,
   DarkTheme,
 } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import * as React from "react";
-import { ColorSchemeName } from "react-native";
-
-import NotFoundScreen from "../screens/NotFoundScreen";
-import { RootStackParamList } from "../types";
-import DrawerNavigator from "./DrawerNavigator";
-import LinkingConfiguration from "./LinkingConfiguration";
 
 const Navigation = ({ colorScheme }: { colorScheme: ColorSchemeName }) => {
   return (
@@ -28,7 +28,13 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: true,
+        headerStatusBarHeight: 10,
+        header: () => <Header />,
+      }}
+    >
       <Stack.Screen name="Root" component={DrawerNavigator} />
       <Stack.Screen
         name="NotFound"

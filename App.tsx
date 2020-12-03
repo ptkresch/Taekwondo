@@ -1,12 +1,12 @@
+import Header from './components/Header';
+import Navigation from './navigation';
+import React from 'react';
+import styled from 'styled-components/native';
+import useCachedResources from './hooks/useCachedResources';
+import useColorScheme from './hooks/useColorScheme';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StatusBar } from 'react-native';
 // import { StatusBar } from "expo-status-bar";
-import { StatusBar } from "react-native";
-import React from "react";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-
-import useCachedResources from "./hooks/useCachedResources";
-import useColorScheme from "./hooks/useColorScheme";
-import Navigation from "./navigation";
-import Header from "./components/Header";
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -17,9 +17,9 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        <Header />
+        {/* <Header /> */}
         <Navigation colorScheme={colorScheme} />
-        <StatusBar translucent={true} hidden={true} />
+        <StatusBar barStyle="light-content" />
       </SafeAreaProvider>
     );
   }

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components/native';
 import Svg, { Path, SvgProps } from 'react-native-svg';
+import { Image } from 'react-native';
 
 function SvgComponent(props: SvgProps) {
   return (
@@ -36,35 +37,44 @@ const IconContainer = styled.View`
 
 const HeaderContainer = styled.View`
   margin: auto;
-  padding: 10px;
+  padding: 30px;
   flex-direction: row;
   flex: 1;
   flex-basis: auto;
   flex-grow: 0;
   width: 100%;
-  height: 10%;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  border: 1px solid #a7a7a7;
+  border: 1px solid #198228;
   border-top-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  background-color: #2d2d2d;
 `;
 
 const HeaderTitle = styled.Text`
   font-size: 18px;
-  color: #000;
+  color: #198228;
   width: 100%;
   position: absolute;
   text-align: center;
+  position: absolute;
+`;
+
+const Logo = styled.Image`
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  margin: 0 auto 0 0;
 `;
 
 const Header = () => {
   return (
     <HeaderContainer>
-      <IconContainer>
-        <SvgComponent />
-      </IconContainer>
-      <HeaderTitle>Header here!</HeaderTitle>
+      <Logo source={require("../../assets/images/ptc_logo.png")} />
+
+      <HeaderTitle>Powell's Taekwondo</HeaderTitle>
     </HeaderContainer>
   );
 };
