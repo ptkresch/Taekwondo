@@ -1,6 +1,7 @@
 import * as React from 'react';
 import ButtonComponent from '../components/Button';
 import CardComponent from '../components/Card';
+import Header from '../components/Header';
 import styled from 'styled-components/native';
 import Typography, { themeOverride } from '../components/Typography';
 import { material, materialColors } from 'react-native-typography';
@@ -9,7 +10,7 @@ import { Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const ScreenView = styled.View`
-  padding: 10px;
+  /* background-color: #afafaf; */
 `;
 
 const ButtonContainer = styled.View`
@@ -31,6 +32,7 @@ const Home = () => {
   const navigation = useNavigation();
   return (
     <ScreenView>
+      <Header />
       <CardComponent>
         <Typography
           style={{

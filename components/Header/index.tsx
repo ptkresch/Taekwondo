@@ -31,27 +31,23 @@ import { StyleSheet } from 'react-native';
 // }
 
 const HeaderContainer = styled.View`
-  margin: auto;
-  padding: 30px;
-  flex-direction: row;
+  border: 1px solid #198228;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+  background-color: #2d2d2d;
   flex: 1;
+  flex-direction: row;
   flex-basis: auto;
   flex-grow: 0;
-  width: 100%;
   align-items: center;
-  justify-content: center;
-  border: 1px solid #198228;
-  border-top-color: transparent;
-  border-right-color: transparent;
-  border-left-color: transparent;
-  background-color: #2d2d2d;
+  justify-content: space-evenly;
+  position: relative;
+  padding-bottom: 10px;
 `;
 
 const HeaderTitle = styled.Text`
   color: #fff;
-  width: 100%;
-  position: absolute;
-  text-align: center;
   text-align: center;
   font-weight: bold;
   text-shadow: 3px 3px 2px #198228;
@@ -62,7 +58,6 @@ const Logo = styled.Image`
   width: 60px;
   height: 60px;
   border-radius: 100px;
-  margin: 0 auto 0 0;
 `;
 
 const styles = StyleSheet.create({
@@ -81,6 +76,7 @@ const Header = () => {
       >
         Powell's Taekwondo
       </HeaderTitle>
+      <Logo source={require("../../assets/images/hod_logo.png")} />
     </HeaderContainer>
   );
 };
