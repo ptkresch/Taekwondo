@@ -48,14 +48,13 @@ const HeaderContainer = styled.View`
 `;
 
 const HeaderTitle = styled.Text`
-  font-size: 25px;
   color: #fff;
   width: 100%;
   position: absolute;
   text-align: center;
   text-align: center;
   font-weight: bold;
-  text-shadow: 3px 3px 2px green;
+  text-shadow: 3px 3px 2px #198228;
 `;
 
 const Logo = styled.Image`
@@ -77,7 +76,11 @@ const Header = () => {
   return (
     <HeaderContainer>
       <Logo source={require("../../assets/images/ptc_logo.png")} />
-      <HeaderTitle style={styles.display1White}>Powell's Taekwondo</HeaderTitle>
+      <HeaderTitle
+        style={{ ...material.display1WhiteObject, fontSize: 20, color: "#fff" }}
+      >
+        Powell's Taekwondo
+      </HeaderTitle>
     </HeaderContainer>
   );
 };

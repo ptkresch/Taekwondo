@@ -22,8 +22,6 @@ const TextComponent = styled.Text`
 `;
 
 const ButtonComponent = (props: ButtonOptions) => (
-  //TODO: Use better web detection
-  // return !window.document ? (
   <ButtonComponent_
     activeOpacity={0.8}
     onPress={() => {
@@ -32,11 +30,6 @@ const ButtonComponent = (props: ButtonOptions) => (
   >
     <TextComponent>{props.title}</TextComponent>
   </ButtonComponent_>
-  // )
-  // : (
-  //TODO: Change web button style, button options
-  // <Button title={props.title} onPress={() => alert(props.title)} />
-  // );
 );
 
 export default ButtonComponent;

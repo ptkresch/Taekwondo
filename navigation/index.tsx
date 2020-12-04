@@ -36,11 +36,11 @@ function RootNavigator() {
       }}
     >
       <Stack.Screen name="Root" component={DrawerNavigator} />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}
         options={{ title: "Oops!" }}
-      />
+      /> */}
     </Stack.Navigator>
   );
 }
