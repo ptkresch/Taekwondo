@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Home from '../screens/Home';
 import { Button, Text, View } from 'react-native';
+import { DrawerContentComponentProps } from '@react-navigation/drawer/lib/typescript/src/types';
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -17,10 +18,15 @@ function Notifications({ navigation }: any) {
   );
 }
 
-const DrawerContent = (props: any) => {
+const DrawerContent = (props: DrawerContentComponentProps) => {
   return (
     <DrawerContentScrollView {...props}>
-      <DrawerItemList {...props} />
+      <DrawerItemList
+        {...props}
+        activeBackgroundColor="#000"
+        activeTintColor="#fff"
+        inactiveBackgroundColor="#fff"
+      />
       <DrawerItem
         label="Close"
         onPress={() => props.navigation.toggleDrawer()}

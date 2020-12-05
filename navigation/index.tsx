@@ -10,6 +10,7 @@ import {
   NavigationContainer,
   DefaultTheme,
   DarkTheme,
+  NavigationContext,
 } from "@react-navigation/native";
 
 const Navigation = ({ colorScheme }: { colorScheme: ColorSchemeName }) => {
@@ -41,11 +42,11 @@ function RootNavigator() {
         ),
       }}
     >
-      <Stack.Screen
+      {/* <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}
         options={{ title: "Oops!" }}
-      />
+      /> */}
       <Stack.Screen name="Root" component={DrawerNavigator} />
     </Stack.Navigator>
   );

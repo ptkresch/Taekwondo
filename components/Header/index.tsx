@@ -1,7 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components/native';
 import { material, materialColors } from 'react-native-typography';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 // import Svg, { Path, SvgProps } from 'react-native-svg';
 
 // function SvgComponent(props: SvgProps) {
@@ -68,9 +69,12 @@ const styles = StyleSheet.create({
 });
 
 const Header = () => {
+  const navigation = useNavigation();
   return (
     <HeaderContainer>
-      <Logo source={require("../../assets/images/ptc_logo.png")} />
+      <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+        <Logo source={require("../../assets/images/ptc_logo.png")} />
+      </TouchableOpacity>
       <HeaderTitle
         style={{ ...material.display1WhiteObject, fontSize: 20, color: "#fff" }}
       >
