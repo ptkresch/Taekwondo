@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Home from '../screens/Home';
+import ListScreen from '../screens/ListScreen';
 import { Button, Text, View } from 'react-native';
 import { DrawerContentComponentProps } from '@react-navigation/drawer/lib/typescript/src/types';
 import {
@@ -41,7 +42,7 @@ const DrawerComponent = () => {
   return (
     <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}>
       <Drawer.Screen name="Home" component={Home} />
-      <Drawer.Screen name="Notifications" component={Notifications} />
+      <Drawer.Screen name="ListScreen" component={ListScreen} />
     </Drawer.Navigator>
   );
 };

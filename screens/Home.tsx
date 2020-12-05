@@ -3,10 +3,9 @@ import ButtonComponent from '../components/Button';
 import CardComponent from '../components/Card';
 import Header from '../components/Header';
 import styled from 'styled-components/native';
-import Typography, { themeOverride } from '../components/Typography';
-import { material, materialColors } from 'react-native-typography';
-import { StyleSheet } from 'react-native';
-import { Text, View } from 'react-native';
+import Typography from '../components/Typography';
+import Unorderedlist from 'react-native-unordered-list';
+import { material } from 'react-native-typography';
 import { useNavigation } from '@react-navigation/native';
 
 const ScreenView = styled.View`
@@ -18,6 +17,13 @@ const ButtonContainer = styled.View`
   min-width: 200px;
   width: 20%;
 `;
+
+const ClassList: Array<{ text: string; symbol: number }> = [
+  { text: "Traditional Taekwondo", symbol: 0x2630 },
+  { text: "Hapkido/Judo/Grappling", symbol: 0x2632 },
+  { text: "Kumdo", symbol: 0x2635 },
+  { text: "Bootcamp/Fitness", symbol: 0x2637 },
+];
 
 const OpenNavigationButton = ({ navigation }: any) => {
   return (
@@ -37,8 +43,8 @@ const Home = () => {
         <Typography
           style={{
             ...material.body1Object,
-            fontSize: 20,
-            lineHeight: 30,
+            fontSize: 14,
+            lineHeight: 24,
           }}
         >
           Since 1999, Powell's Taekwondo Center (PTC) has been providing the
@@ -46,13 +52,75 @@ const Home = () => {
           area. Centrally located on the border of Concord and Pleasant Hill,
           CA, PTC offers classes in:
         </Typography>
-        {/* Traditional Taekwondo Hapkido/Judo/Grappling Kumdo Bootcamp/Fitness
-        Available for: Children (5-12) Teens (13-17) Adults (18+) */}
+        {ClassList.map((classItem) => (
+          <Unorderedlist
+            bulletUnicode={classItem.symbol}
+            style={{ lineHeight: 30, marginLeft: 20 }}
+            key={classItem.text}
+          >
+            <Typography
+              style={{
+                ...material.body1Object,
+                fontSize: 14,
+                lineHeight: 24,
+              }}
+            >
+              {classItem.text}
+            </Typography>
+          </Unorderedlist>
+        ))}
         <Typography
           style={{
             ...material.body1Object,
-            fontSize: 20,
-            lineHeight: 30,
+            fontSize: 14,
+            lineHeight: 24,
+          }}
+        >
+          Available for:
+        </Typography>
+        <Unorderedlist style={{ lineHeight: 30, marginLeft: 20 }}>
+          <Typography
+            style={{
+              ...material.body1Object,
+              fontSize: 14,
+              lineHeight: 24,
+            }}
+          >
+            Children (5-12)
+          </Typography>
+        </Unorderedlist>
+        <Unorderedlist style={{ lineHeight: 30, marginLeft: 20 }}>
+          <Typography
+            style={{
+              ...material.body1Object,
+              fontSize: 14,
+              lineHeight: 24,
+            }}
+          >
+            Teens (13-17)
+          </Typography>
+        </Unorderedlist>
+        <Unorderedlist style={{ lineHeight: 30, marginLeft: 20 }}>
+          <Typography
+            style={{
+              ...material.body1Object,
+              fontSize: 14,
+              lineHeight: 24,
+            }}
+          >
+            Adults (18+)
+          </Typography>
+        </Unorderedlist>
+      </CardComponent>
+      <CardComponent>
+        <ButtonContainer>
+          <OpenNavigationButton navigation={navigation} />
+        </ButtonContainer>
+        <Typography
+          style={{
+            ...material.body1Object,
+            fontSize: 14,
+            lineHeight: 24,
           }}
         >
           With a focus on traditional martial arts, PTC strives to deliver
@@ -62,9 +130,6 @@ const Home = () => {
           dedicate themselves to helping students find their own martial arts
           path.
         </Typography>
-        <ButtonContainer>
-          <OpenNavigationButton navigation={navigation} />
-        </ButtonContainer>
         {/* <ButtonContainer>
           <ButtonComponent
             title="Let's Start Training!"

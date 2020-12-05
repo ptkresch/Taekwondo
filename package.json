@@ -38,8 +38,10 @@
     "react-native-svg": "12.1.0",
     "react-native-tab-view": "^2.15.2",
     "react-native-typography": "^1.4.1",
+    "react-native-unordered-list": "^1.0.4",
     "react-native-vector-icons": "^7.1.0",
     "react-native-web": "~0.13.12",
+    "react-native-web-swiper": "^2.1.7",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {

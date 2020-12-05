@@ -42,12 +42,12 @@ function RootNavigator() {
         ),
       }}
     >
+      <Stack.Screen name="Root" component={DrawerNavigator} />
       {/* <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}
         options={{ title: "Oops!" }}
       /> */}
-      <Stack.Screen name="Root" component={DrawerNavigator} />
     </Stack.Navigator>
   );
 }
