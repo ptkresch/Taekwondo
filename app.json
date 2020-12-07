@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "my-app",
-    "slug": "my-app",
+    "name": "ptc",
+    "slug": "ptc",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/ptc_logo.png",
@@ -19,7 +19,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ptkresch.ptc"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,6 +30,8 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "description": "Powell's Taekwondo Center - App Build",
+    "githubUrl": "https://github.com/ptkresch/Taekwondo"
   }
 }
