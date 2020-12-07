@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components/native';
+import { Ionicons } from '@expo/vector-icons';
 import { material, materialColors } from 'react-native-typography';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 // import Svg, { Path, SvgProps } from 'react-native-svg';
 
 // function SvgComponent(props: SvgProps) {
@@ -68,8 +68,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const Header = () => {
-  const navigation = useNavigation();
+const Header = ({ navigation }: any) => {
+  // const navigation = useNavigation();
   return (
     <HeaderContainer>
       <TouchableOpacity onPress={() => navigation.navigate("Home")}>
@@ -80,7 +80,15 @@ const Header = () => {
       >
         Powell's Taekwondo
       </HeaderTitle>
-      <Logo source={require("../../assets/images/hod_logo.png")} />
+      {/* <Logo source={require("../../assets/images/hod_logo.png")} /> */}
+      <TouchableOpacity onPress={() => navigation.openDrawer()}>
+        <Ionicons
+          name="md-menu"
+          size={36}
+          color="#208630"
+          style={{ width: 60, textAlign: "center" }}
+        />
+      </TouchableOpacity>
     </HeaderContainer>
   );
 };

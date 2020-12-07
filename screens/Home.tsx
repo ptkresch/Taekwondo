@@ -5,12 +5,10 @@ import Header from '../components/Header';
 import styled from 'styled-components/native';
 import Typography from '../components/Typography';
 import Unorderedlist from 'react-native-unordered-list';
+import { DrawerNavigationHelpers } from '@react-navigation/drawer/lib/typescript/src/types';
 import { material } from 'react-native-typography';
+import { ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
-const ScreenView = styled.View`
-  /* background-color: #afafaf; */
-`;
 
 const ButtonContainer = styled.View`
   padding: 10px 0;
@@ -34,11 +32,16 @@ const OpenNavigationButton = ({ navigation }: any) => {
   );
 };
 
-const Home = () => {
-  const navigation = useNavigation();
+const Home = ({ navigation }: any) => {
+  const navigation_ = useNavigation();
   return (
-    <ScreenView>
-      <Header />
+    <ScrollView
+      bounces={false}
+      stickyHeaderIndices={[0]}
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ paddingBottom: 20 }}
+    >
+      <Header navigation={navigation} />
       <CardComponent>
         <Typography
           style={{
@@ -139,7 +142,7 @@ const Home = () => {
           />
         </ButtonContainer> */}
       </CardComponent>
-    </ScreenView>
+    </ScrollView>
   );
 };
 

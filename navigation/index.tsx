@@ -10,7 +10,6 @@ import {
   NavigationContainer,
   DefaultTheme,
   DarkTheme,
-  NavigationContext,
 } from "@react-navigation/native";
 
 const Navigation = ({ colorScheme }: { colorScheme: ColorSchemeName }) => {

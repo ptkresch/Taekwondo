@@ -5,14 +5,19 @@ import styled from 'styled-components/native';
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { StatusBar } from 'react-native';
+import { StatusBar, Text, View } from 'react-native';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
   if (!isLoadingComplete) {
-    return null;
+    return (
+      //TODO: add loading screen
+      <View>
+        <Text>Loading....</Text>
+      </View>
+    );
   } else {
     return (
       <SafeAreaProvider>

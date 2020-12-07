@@ -1,13 +1,6 @@
 import Header from '../components/Header';
 import React from 'react';
-import {
-  View,
-  FlatList,
-  StyleSheet,
-  Text,
-  StatusBar,
-  SafeAreaView,
-} from "react-native";
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 const DATA = [
   {
@@ -25,10 +18,6 @@ const DATA = [
 ];
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 0,
-  },
   item: {
     backgroundColor: "#f9c2ff",
     padding: 20,
@@ -48,16 +37,16 @@ const Item = ({ title }: any) => (
 
 const renderItem = ({ item }: any) => <Item title={item.title} />;
 
-const ListScreen = () => {
+const ListScreen = ({ navigation }: any) => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Header />
+    <View>
+      <Header navigation={navigation} />
       <FlatList
         data={DATA}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 
