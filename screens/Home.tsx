@@ -1,14 +1,13 @@
 import * as React from 'react';
 import ButtonComponent from '../components/Button';
 import CardComponent from '../components/Card';
+import Carousel from '../components/Carousel';
 import Header from '../components/Header';
 import styled from 'styled-components/native';
 import Typography from '../components/Typography';
 import Unorderedlist from 'react-native-unordered-list';
-import { DrawerNavigationHelpers } from '@react-navigation/drawer/lib/typescript/src/types';
 import { material } from 'react-native-typography';
 import { ScrollView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 
 const ButtonContainer = styled.View`
   padding: 10px 0;
@@ -33,7 +32,6 @@ const OpenNavigationButton = ({ navigation }: any) => {
 };
 
 const Home = ({ navigation }: any) => {
-  const navigation_ = useNavigation();
   return (
     <ScrollView
       bounces={false}
@@ -42,6 +40,7 @@ const Home = ({ navigation }: any) => {
       contentContainerStyle={{ paddingBottom: 20 }}
     >
       <Header navigation={navigation} />
+      <Carousel />
       <CardComponent>
         <Typography
           style={{
@@ -116,9 +115,9 @@ const Home = ({ navigation }: any) => {
         </Unorderedlist>
       </CardComponent>
       <CardComponent>
-        <ButtonContainer>
+        {/* <ButtonContainer>
           <OpenNavigationButton navigation={navigation} />
-        </ButtonContainer>
+        </ButtonContainer> */}
         <Typography
           style={{
             ...material.body1Object,
@@ -133,14 +132,6 @@ const Home = ({ navigation }: any) => {
           dedicate themselves to helping students find their own martial arts
           path.
         </Typography>
-        {/* <ButtonContainer>
-          <ButtonComponent
-            title="Let's Start Training!"
-            onPress={() => {
-              navigation.navigate("Notifications");
-            }}
-          />
-        </ButtonContainer> */}
       </CardComponent>
     </ScrollView>
   );

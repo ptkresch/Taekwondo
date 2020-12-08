@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Home from '../screens/Home';
 import ListScreen from '../screens/ListScreen';
-import { Button, Text, View } from 'react-native';
 import { DrawerContentComponentProps } from '@react-navigation/drawer/lib/typescript/src/types';
 import {
   createDrawerNavigator,
@@ -9,15 +8,6 @@ import {
   DrawerItem,
   DrawerItemList,
 } from "@react-navigation/drawer";
-
-function Notifications({ navigation }: any) {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Notifications Screen</Text>
-      <Button title="Open drawer" onPress={() => navigation.openDrawer()} />
-    </View>
-  );
-}
 
 const DrawerContent = (props: DrawerContentComponentProps) => {
   return (
